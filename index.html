@@ -9,31 +9,31 @@
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
-
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/styles.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
-
-        <form action="#" method="post">
-            <fieldset>
+    
+        <form class="js-form">
+            <fieldset class="js-fieldset js-1">
                 <legend>Your interest</legend>
-                <input type="radio" name="interest" id="interest-sport"> <label for="interest-sport">Sport</label>
-                <input type="radio" name="interest" id="interest-fashion"> <label for="interest-fashion">Fashion</label>
+                <input type="radio" name="interest" value="sport" id="interest-sport"> <label for="interest-sport">Sport</label>
+                <input type="radio" name="interest" value="fashion" id="interest-fashion"> <label for="interest-fashion">Fashion</label>
+                <div class="js-next" data-gofrom="1" data-goto="2">Next</div>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="js-fieldset js-2 hidden">
                 <legend>Body part</legend>
-                <input type="radio" name="body-part" id="body-head"> <label for="body-head">Head</label>
-                <input type="radio" name="body-part" id="body-hands"> <label for="body-hands">Hands</label>
+                <input type="radio" name="body-part" value="head" id="body-head"> <label for="body-head">Head</label>
+                <input type="radio" name="body-part" value="hands" id="body-hands"> <label for="body-hands">Hands</label>
+                <div class="js-back" data-gofrom="2" data-goto="1">Back</div>
+                <div class="js-next" data-gofrom="2" data-goto="3">Next</div>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="js-fieldset js-3 hidden">
                 <legend>Your details</legend>
                 <label for="first-name">First name </label>
                 <input type="text" name="first-name" id="first-name">
@@ -45,23 +45,24 @@
 
                 <br />
 
-                <label for="surname">Email</label>
+                <label for="email">Email</label>
                 <input type="text" name="email" id="email">
+                <div class="js-back" data-gofrom="3" data-goto="2">Back</div>
+                <div class="js-next" data-gofrom="3" data-goto="4">Next</div>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="js-fieldset js-4 hidden">
                 
                 <input type="checkbox" name="chk" value="" id="terms">
                 <label for="terms">Agree to terms</label> 
 
                 <br />
-                
-                <input type="submit" value="Submit idea" />
+
+                <div class="js-back" data-gofrom="4" data-goto="3">Back</div>
+                <a class="js-submit">Submit</a>
             </fieldset>
             
         </form>
-
-
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
